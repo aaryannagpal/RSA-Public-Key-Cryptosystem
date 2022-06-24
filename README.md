@@ -67,3 +67,16 @@ be our large prime numbers.
 
 To check whether these numbers are prime, we use the ***Fermat’s Primality Test***
 
+#### Fermat’s Primality Test
+
+If $𝑝$
+is prime, then,
+
+
+$$𝑎^{𝑝−1} \equiv 1 \text{ 𝑚𝑜𝑑 } 𝑝$$
+
+
+for all 
+$𝑎 \in \mathbb{Z}_𝑝^{∗}$
+
+
