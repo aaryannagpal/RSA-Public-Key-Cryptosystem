@@ -55,7 +55,7 @@ Hence,
 
 $$𝑀^{𝑒𝑑} \equiv 𝑀 \text{ 𝑚𝑜𝑑 } 𝑝𝑞 \equiv 𝑀 \text{ 𝑚𝑜𝑑 } 𝑛$$
 
-## Creating our RSA
+## Our RSA
 
 ### Generating the prime numbers
 
@@ -78,5 +78,37 @@ $$𝑎^{𝑝−1} \equiv 1 \text{ 𝑚𝑜𝑑 } 𝑝$$
 
 for all 
 $𝑎 \in \mathbb{Z}_𝑝^{∗}$
+
+## Efficiency
+
+Both encryption and decryption require repeated multiplications (modulo $𝑛$) 
+of $𝑥$
+-bit numbers.
+
+For encryption, multiplication of 2, followed by reduction modulo
+$𝑛$. Both take time complexity $𝜪(𝒙^𝟐)$.
+
+For decryption, the $𝑥$
+-bit would undergo $𝑑$
+multiplications. As $𝑑$
+is of complexity $𝑛$
+, we get time complexity $𝜪(n𝒙^𝟐 )$.
+
+## Security
+
+RSA is not a impenetrable cryptosystem and thus faces a few security threats:
+
+- If $𝒎^𝒆$ is strictly less than the modulus 𝒏, ciphertexts can be decrypted easily by taking the 𝒆th root of the ciphertext over the integers.
+
+- If someone asks access to the private key 𝒅 to decrypt some harmless ciphertext, one can decrypt another message using the same key, due to the multiplicative property$^1$ in RSA.
+
+- If one obtains the private exponent 𝑑, any private key can be generated against a public key by simply factoring the modulus 𝑛=𝑝𝑞.
+
+- If the same clear-text message is sent to 𝑒 or more recipients in an encrypted way, and the receivers share the same exponent 𝑒, but different 𝒑,  𝒒 and therefore 𝒏, then it is easy to decrypt the original clear-text message via the Chinese remainder theorem$^2$.
+
+
+###### 1. $\text{If } m_1 \text{ and }  𝑚_2  \text{ are ciphertexts, then according to the property, }𝑚_1^𝑒 𝑚_2^𝑒 = (𝑚_1 𝑚_2 )^𝑒 (𝑚𝑜𝑑 𝑛)$
+###### 2. Chinese remainder theorem states that if one knows the remainders of the Euclidean division of an integer 𝒏 by several integers, then one can determine uniquely the remainder of the division of 𝒏 by the product of these integers, under the condition that the divisors are pairwise coprime!
+
 
 
