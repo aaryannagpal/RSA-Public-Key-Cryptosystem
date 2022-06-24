@@ -110,5 +110,11 @@ RSA is not a impenetrable cryptosystem and thus faces a few security threats:
 ###### 1. $\text{If } m_1 \text{ and }  𝑚_2  \text{ are ciphertexts, then according to the property, }𝑚_1^𝑒 𝑚_2^𝑒 = (𝑚_1 𝑚_2 )^𝑒 (𝑚𝑜𝑑 𝑛)$
 ###### 2. Chinese remainder theorem states that if one knows the remainders of the Euclidean division of an integer 𝒏 by several integers, then one can determine uniquely the remainder of the division of 𝒏 by the product of these integers, under the condition that the divisors are pairwise coprime!
 
+# References
+
+- https://en.wikipedia.org/wiki/RSA_(cryptosystem)
+- https://www.geeksforgeeks.org/rsa-algorithm-cryptography/
+- https://en.wikipedia.org/wiki/Chinese_remainder_theorem
+- RSA key values and Time Complexity - https://www.youtube.com/watch?v=-NZApqGCYeA
 
 
